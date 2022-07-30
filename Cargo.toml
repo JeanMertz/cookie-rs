@@ -21,7 +21,8 @@ signed = ["hmac", "sha2", "base64", "rand", "subtle"]
 key-expansion = ["sha2", "hkdf"]
 
 [dependencies]
-time = { version = "0.3", default-features = false, features = ["std", "parsing", "formatting", "macros"] }
+# wasm support isn't released yet as of version v0.3.11. See: https://github.com/time-rs/time/pull/491
+time = { git = "https://github.com/time-rs/time", rev = "7be38dc28c56eb5d4e1c250720803ecbaea4f283", default-features = false, features = ["std", "parsing", "formatting", "macros"] }
 percent-encoding = { version = "2.0", optional = true }
 
 # dependencies for secure (private/signed) functionality
